@@ -1,0 +1,68 @@
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .seconds {
+    width: 50px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 5px;
+    border: 10px ridge white;
+  }
+}
+
+.board {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+
+  .cell {
+    height: 76px;
+    border: 2px solid white;
+    background-color: #808080;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #a7a7a7;
+    }
+
+    .flip-box-inner {
+      position: relative;
+      transition: transform 0.4s;
+      transform-style: preserve-3d;
+
+      .flip-box-front,
+      .flip-box-back {
+        backface-visibility: hidden;
+      }
+
+      .flip-box-back {
+        transform: rotateY(180deg);
+
+        .img-cell {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .active-background {
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+      }
+    }
+
+    .active-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .active-events {
+    pointer-events: none;
+  }
+}

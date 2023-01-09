@@ -1,0 +1,60 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  margin: 0 30px;
+
+  .rules {
+    padding-left: 20px;
+
+    .rule {
+      font-size: 18px;
+      margin: 0 0 10px 20px;
+    }
+  }
+}
+
+.modal-input {
+  height: 30px;
+  border-radius: 12px;
+  border: 2px solid black;
+  font-size: 18px;
+  outline: 0;
+  padding: 20px;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.validation-info {
+  color: red;
+  width: 250px;
+  text-align: center;
+  margin: 10px auto 0;
+}
+
+.modal-button {
+  display: block;
+  margin: 20px auto;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: #00c1a2;
+  border: 0;
+  box-shadow: 0 0 5px black;
+  padding: 7px 20px;
+
+  &:hover {
+    cursor: pointer;
+    background-image: radial-gradient(
+      ellipse farthest-corner at 50% 50%,
+      #0c7564,
+      #777
+    );
+  }
+}
