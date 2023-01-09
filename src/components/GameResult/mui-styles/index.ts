@@ -1,16 +1,8 @@
-import { makeStyles } from "@material-ui/core/styles";
-export { default as Table } from "@material-ui/core/Table";
-export { default as TableBody } from "@material-ui/core/TableBody";
-export { default as TableCell } from "@material-ui/core/TableCell";
-export { default as TableContainer } from "@material-ui/core/TableContainer";
-export { default as TableHead } from "@material-ui/core/TableHead";
-export { default as TableRow } from "@material-ui/core/TableRow";
-export { default as Paper } from "@material-ui/core/Paper";
+export { default as Table } from '@mui/material/Table';
+export { default as TableBody } from "@mui/material/TableBody";
+export { default as TableCell } from "@mui/material/TableCell";
+export { default as TableContainer } from "@mui/material/TableContainer";
+export { default as TableHead } from "@mui/material/TableHead";
+export { default as TableRow } from "@mui/material/TableRow";
+export { default as Paper } from "@mui/material/Paper";
 
-const useStyles = makeStyles({
-  table: {
-    width: 300,
-  },
-});
-
-export { useStyles };

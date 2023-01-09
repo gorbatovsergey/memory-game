@@ -11,7 +11,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  useStyles,
 } from "./mui-styles";
 import "./style.scss";
 
@@ -19,7 +18,6 @@ const GameResult: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const id = useId();
-  const classes = useStyles();
   const nickname = useAppSelector((state) => state.nicknameReducer.nickname);
   const results = useAppSelector((state) => state.resultsReducer.results);
 
@@ -27,23 +25,24 @@ const GameResult: FC = () => {
     dispatch(getResultTable());
   }, [dispatch]);
 
-  const startAgain = () => nickname === '' ? navigate("/") : navigate("/game");
+  const startAgain = () =>
+    nickname === "" ? navigate("/") : navigate("/game");
 
   return (
     <div className="result">
       <div className="table">
-
         <h1 className="title-result">Score Table</h1>
 
-        <TableContainer component={Paper} className={classes.table}>
+        <TableContainer
+          component={Paper}
+          sx={{width: 300}}
+        >
           <Table aria-label="a dense table">
             <TableHead>
               <TableRow>
-
                 <TableCell>Name</TableCell>
 
                 <TableCell>Score</TableCell>
-                
               </TableRow>
             </TableHead>
             <TableBody>
@@ -54,7 +53,6 @@ const GameResult: FC = () => {
               ) : (
                 results.map((result, index) => (
                   <TableRow key={`${id}-${index}`}>
-
                     <TableCell component="th" scope="row">
                       {index === 0 ? (
                         <span>
@@ -93,17 +91,14 @@ const GameResult: FC = () => {
                     </TableCell>
 
                     <TableCell>{result.time}</TableCell>
-
                   </TableRow>
                 ))
               )}
             </TableBody>
           </Table>
         </TableContainer>
-
       </div>
       <div className="group-button">
-
         <button
           className="button-table"
           onClick={() => dispatch(clearResultsTable())}
@@ -114,7 +109,6 @@ const GameResult: FC = () => {
         <button className="button-table" onClick={startAgain}>
           Start Again
         </button>
-
       </div>
     </div>
   );
