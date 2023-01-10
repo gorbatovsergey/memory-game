@@ -26,7 +26,7 @@ const GameResult: FC = () => {
   }, [dispatch]);
 
   const startAgain = () =>
-    nickname === "" ? navigate("/") : navigate("/game");
+    !nickname ? navigate("/") : navigate("/game");
 
   return (
     <div className="result">
@@ -42,7 +42,7 @@ const GameResult: FC = () => {
               <TableRow>
                 <TableCell>Name</TableCell>
 
-                <TableCell>Score</TableCell>
+                <TableCell>Time</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

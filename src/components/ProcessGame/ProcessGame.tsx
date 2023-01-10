@@ -7,8 +7,7 @@ const ProcessGame: FC<IPropsProcessGame> = ({
   board,
   activeEvents,
   clickCell,
-}) => {
-  return (
+}) => (
     <>
 
       <div className="timer">
@@ -44,6 +43,5 @@ const ProcessGame: FC<IPropsProcessGame> = ({
       
     </>
   );
-};
 
 export default ProcessGame;

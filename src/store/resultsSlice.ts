@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type nickname = {
+interface INickname {
   name: string;
   time: string;
 };
 
-type ITable = {
-  results: nickname[];
+interface ITable {
+  results: INickname[];
 };
 
 const initialState: ITable = {
@@ -26,7 +26,7 @@ const resultTableSlice = createSlice({
       const scoreTable = JSON.parse(localStorage.getItem("nickname") || "[]");
       scoreTable.push(action.payload);
       const scroreTableSorting = scoreTable.sort(
-        (element: nickname, nextElement: nickname) => {
+        (element: INickname, nextElement: INickname) => {
           if (element.time > nextElement.time) {
             return 1;
           }

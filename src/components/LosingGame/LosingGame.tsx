@@ -4,12 +4,12 @@ import Lottie from "lottie-react";
 import { bombExplode } from "src/img";
 import './style.scss'
 
+const style = {
+  height: '100vh',
+};
+
 const LosingGame: FC = () => {
   const navigate = useNavigate();
-
-  const style = {
-    height: '100vh',
-  };
 
   return (
     <div className="lose-wrapper">

@@ -4,13 +4,12 @@ import { IPropsWinningGame } from "./types";
 import { winner } from "src/img";
 import "./style.scss";
 
-const WinningGame: FC<IPropsWinningGame> = ({ getResult, seconds }) => {
-  const style = {
-    height: 300,
-    width: 300,
-  };
+const style = {
+  height: 300,
+  width: 300,
+};
 
-  return (
+const WinningGame: FC<IPropsWinningGame> = ({ getResult, seconds }) => (
     <>
 
       <p className="congratulations-text">Congratulations!</p>
@@ -25,6 +24,5 @@ const WinningGame: FC<IPropsWinningGame> = ({ getResult, seconds }) => {
       
     </>
   );
-};
 
 export default WinningGame;

@@ -32,7 +32,7 @@ const Game: FC = () => {
       setTimeout(setSeconds, 1000, seconds - 1);
     }
 
-    if (nickname === '') {
+    if (!nickname) {
       navigate("/")
     }
   }, [seconds, points, nickname, navigate]);
@@ -53,7 +53,7 @@ const Game: FC = () => {
   };
 
   const clickCell = ({ id, img, isOpen, isGuessed }: IClickCell) => {
-    if (isOpen === true) return;
+    if (isOpen) return;
 
     dispatch(flipCard(id));
     dispatch(setIntermediateCell({ id, img, isOpen, isGuessed }));
