@@ -1,10 +1,15 @@
 import { FC } from "react";
-import Lottie from "react-lottie";
-import { defaultOptionsWinner } from "src/constants/defaultOptionsLottie";
+import Lottie from "lottie-react";
 import { IPropsWinningGame } from "./types";
+import { winner } from "src/img";
 import "./style.scss";
 
 const WinningGame: FC<IPropsWinningGame> = ({ getResult, seconds }) => {
+  const style = {
+    height: 300,
+    width: 300,
+  };
+
   return (
     <>
 
@@ -12,7 +17,7 @@ const WinningGame: FC<IPropsWinningGame> = ({ getResult, seconds }) => {
 
       <p className="congratulations-text">You finished the game in {60 - seconds} seconds</p>
 
-      <Lottie options={defaultOptionsWinner} height={"300px"} width={"300px"} />
+      <Lottie animationData={winner} loop={true} autoplay={true} style={style}/>
 
       <button className="button-next" onClick={getResult}>
         Score Table

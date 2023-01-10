@@ -1,18 +1,22 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import Lottie from "react-lottie";
-import { defaultOptionsBomb } from "src/constants/defaultOptionsLottie";
+import Lottie from "lottie-react";
+import { bombExplode } from "src/img";
 import './style.scss'
 
 const LosingGame: FC = () => {
   const navigate = useNavigate();
+
+  const style = {
+    height: '100vh',
+  };
 
   return (
     <div className="lose-wrapper">
 
       <div className="lose-wrapper__text">You Lose</div>
 
-      <Lottie options={defaultOptionsBomb} height={"100vh"} />
+      <Lottie animationData={bombExplode} loop={false} autoplay={true} style={style}/>
 
       <button className="button-next" onClick={() => navigate("/result")}>
         Score Table
