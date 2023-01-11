@@ -25,8 +25,13 @@ const GameResult: FC = () => {
     dispatch(getResultTable());
   }, [dispatch]);
 
-  const startAgain = () =>
+  const startAgain = () => {
+    if (!results.length) {
+      return navigate("/")
+    }
+
     !nickname ? navigate("/") : navigate("/game");
+  }
 
   return (
     <div className="result">
