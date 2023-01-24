@@ -74,7 +74,7 @@ const Game: FC = () => {
       {points === 16 ? (
         <WinningGame getResult={getResult} seconds={seconds}/>
       ) : seconds === 0 ? (
-        <LosingGame />
+        <LosingGame getResult={getResult}/>
       ) : (
         <ProcessGame
           seconds={seconds}
