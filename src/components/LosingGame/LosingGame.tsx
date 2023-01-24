@@ -1,29 +1,30 @@
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import { bombExplode } from "src/img";
-import './style.scss'
+import "./style.scss";
 
 const style = {
-  height: '100vh',
+  height: "100vh",
 };
+interface IGetResult {
+  getResult: () => void;
+}
 
-const LosingGame: FC = () => {
-  const navigate = useNavigate();
+const LosingGame: FC<IGetResult> = ({ getResult }) => (
+  <div className="lose-wrapper">
+    <div className="lose-wrapper__text">You Lose</div>
 
-  return (
-    <div className="lose-wrapper">
+    <Lottie
+      animationData={bombExplode}
+      loop={false}
+      autoplay={true}
+      style={style}
+    />
 
-      <div className="lose-wrapper__text">You Lose</div>
-
-      <Lottie animationData={bombExplode} loop={false} autoplay={true} style={style}/>
-
-      <button className="button-next" onClick={() => navigate("/result")}>
-        Score Table
-      </button>
-      
-    </div>
-  );
-};
+    <button className="button-next" onClick={getResult}>
+      Score Table
+    </button>
+  </div>
+);
 
 export default LosingGame;
